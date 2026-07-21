@@ -1,11 +1,21 @@
-const MoviesCard = (props) => {
+const MoviesCard = ({ posterimg, title, rating }) => {
   return (
-    <div className="bg-blue-950 rounded-lg p-4 md:h-full flex-col  flex">
-      <img src={props.posterimg} className="md:h-72 rounded-xl md:w-60  m-2 ml-2 " alt="image" />
-     <div className="mr-20">
-       <h6 className="text-lg text-blue-500">{props.title}</h6>
-      <p className="text-lg text-blue-500">Rating:{props.rating}</p>
-     </div>
+    <div className="bg-blue-950 rounded-lg p-4 flex flex-col items-center">
+      <img
+        src={posterimg}
+        alt={title}
+        className="w-full h-72 object-cover rounded-xl"
+      />
+
+      <div className="w-full mt-3">
+        <h2 className="text-lg font-semibold text-blue-500 truncate">
+          {title}
+        </h2>
+
+        <p className="text-blue-400">
+          Rating: {rating}
+        </p>
+      </div>
     </div>
   );
 };
